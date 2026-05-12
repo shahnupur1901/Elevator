@@ -11,9 +11,13 @@ public class ElevatorController {
 
     public ElevatorController() {
         elevators = new ArrayList<>();
+        for (int i = 0 ; i < NUM_ELEVATORS; i++) {
+            elevators.add(new Elevator());
+        }
         strategy = new NearestSameDirectionFirstStrategy();
     }
 
+    // THIS IS FOR HALL CALL REQUESTS
     public boolean add(int floor, RequestType requestType) {
         /* CORE LOGIC
         1. Create a Request Type object.
@@ -38,4 +42,8 @@ public class ElevatorController {
     public static int getNumFloors(){
         return NUM_FLOORS;
     }
+    public static int getNumElevators(){
+        return NUM_ELEVATORS;
+    }
+
 }

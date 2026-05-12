@@ -6,6 +6,13 @@ public class Elevator {
     ElevatorState elevatorState;
     int currentFloor;
     Request[] requests;
+
+    Elevator() {
+        elevatorState = ElevatorState.IDLE;
+        currentFloor = 0;
+        requests = new Request[ElevatorController.getNumElevators()];
+    }
+
     public void step() {
         /*
         CORE LOGIC: continue in current direction until no more requests in that direction. then decide to go idle or reverse.
@@ -79,6 +86,8 @@ public class Elevator {
     public void open() {
 
     }
+
+    // this is for DESTINATION requests on panel AND called by Elevator Controller.
     public boolean add(Request request) {
         /*
         Core logic:
