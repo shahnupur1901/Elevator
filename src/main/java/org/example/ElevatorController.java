@@ -7,7 +7,7 @@ public class ElevatorController {
 
     List<Elevator> elevators;
     ElevatorSelectionStrategy strategy;
-    static int NUM_FLOORS, NUM_ELEVATORS;
+    static int NUM_FLOORS = 10, NUM_ELEVATORS = 3;
 
     public ElevatorController() {
         elevators = new ArrayList<>();

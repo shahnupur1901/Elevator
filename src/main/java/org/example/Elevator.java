@@ -10,7 +10,7 @@ public class Elevator {
     Elevator() {
         elevatorState = ElevatorState.IDLE;
         currentFloor = 0;
-        requests = new Request[ElevatorController.getNumElevators()];
+        requests = new Request[ElevatorController.getNumFloors()];
     }
 
     public void step() {

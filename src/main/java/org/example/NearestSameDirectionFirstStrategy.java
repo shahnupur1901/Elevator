@@ -16,7 +16,7 @@ public class NearestSameDirectionFirstStrategy implements ElevatorSelectionStrat
 
         Elevator best = findNearestSameDirection(request.floor, request.requestType, elevators);
         if (best == null) {
-            best = findIdle(request.floor, elevators);
+            best = findNearestIdle(request.floor, elevators);
         }
         if (best == null) {
             best = findNearest(request.floor, elevators);
@@ -36,7 +36,7 @@ public class NearestSameDirectionFirstStrategy implements ElevatorSelectionStrat
         return bestElevator;
     }
 
-    private Elevator findIdle(int floor, List<Elevator> elevators) {
+    private Elevator findNearestIdle(int floor, List<Elevator> elevators) {
         Elevator bestElevator = null;
         int minDistance = Integer.MAX_VALUE;
         for (Elevator elevator : elevators) {
