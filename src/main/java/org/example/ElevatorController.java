@@ -5,9 +5,9 @@ import java.util.List;
 
 public class ElevatorController {
 
-    List<Elevator> elevators;
-    ElevatorSelectionStrategy strategy;
-    static int NUM_FLOORS = 10, NUM_ELEVATORS = 3;
+    private List<Elevator> elevators;
+    private ElevatorSelectionStrategy strategy;
+    private static int NUM_FLOORS = 10, NUM_ELEVATORS = 3;
 
     public ElevatorController() {
         elevators = new ArrayList<>();

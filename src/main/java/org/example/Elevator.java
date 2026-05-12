@@ -3,9 +3,9 @@ package org.example;
 import java.util.Set;
 
 public class Elevator {
-    ElevatorState elevatorState;
-    int currentFloor;
-    Request[] requests;
+    private ElevatorState elevatorState;
+    private int currentFloor;
+    private Request[] requests;
 
     Elevator() {
         elevatorState = ElevatorState.IDLE;
@@ -32,7 +32,7 @@ public class Elevator {
         }
 
         if (elevatorState == ElevatorState.IDLE) {
-            for (int i = currentFloor + 1; i < ElevatorController.NUM_FLOORS; i++) {
+            for (int i = currentFloor + 1; i < ElevatorController.getNumFloors(); i++) {
                 if (requests[i] != null) {
                     elevatorState = ElevatorState.GOING_UP;
                     currentFloor++;
@@ -55,7 +55,7 @@ public class Elevator {
                     return;
                 }
             }
-            for (int i = currentFloor + 1; i < ElevatorController.NUM_FLOORS; i++) {
+            for (int i = currentFloor + 1; i < ElevatorController.getNumFloors(); i++) {
                 if (requests[i] != null) {
                     elevatorState = ElevatorState.GOING_UP;
                     currentFloor++;
@@ -65,7 +65,7 @@ public class Elevator {
             elevatorState = ElevatorState.IDLE;
         }
         else {
-            for (int i = currentFloor + 1; i < ElevatorController.NUM_FLOORS; i++) {
+            for (int i = currentFloor + 1; i < ElevatorController.getNumFloors(); i++) {
                 if (requests[i] != null) {
                     elevatorState = ElevatorState.GOING_UP;
                     currentFloor++;
