@@ -29,6 +29,7 @@ public class Elevator {
         if (requests[currentFloor] != null) {
             open();
             requests[currentFloor] = null;
+            return;
         }
 
         if (elevatorState == ElevatorState.IDLE) {
